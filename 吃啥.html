@@ -62,6 +62,29 @@ body {
         #refreshButton:hover {
             background-color: #c9302c;
         }
+        body,
+      html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .refresh-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+      }
+      .refresh-button:hover {
+        background-color: #da190b;
+      }
     </style>
     <script>
         function getRandomItem(array) {
