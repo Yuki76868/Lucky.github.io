@@ -128,7 +128,7 @@ body {
 
         function selectRandomFood() {
             var randomFood = getRandomItem(foodList);
-            document.getElementById("result").innerText = "今天的食物是: " + randomFood;
+            document.getElementById("result").innerText = + randomFood;
         }
 
         window.onload = function() {
