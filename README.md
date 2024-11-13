@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -128,7 +127,7 @@ body {
 
         function selectRandomFood() {
             var randomFood = getRandomItem(foodList);
-            document.getElementById("result").innerText = + randomFood;
+            document.getElementById("result").innerText = randomFood;
         }
 
         window.onload = function() {
