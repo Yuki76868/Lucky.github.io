@@ -1,10 +1,11 @@
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>今天吃点啥</title>
     <style>
-        :root {
+:root {
   --color-1: #8dbf8b;
   --color-2: #fcf1d8;
   --color-3: #fadc9c;
@@ -12,17 +13,7 @@
 }
 
 body {
-  background: linear-gradient(
-    90deg,
-    var(--color-1) 0%,
-    var(--color-1) 25%,
-    var(--color-2) 25%,
-    var(--color-2) 50%,
-    var(--color-3) 50%,
-    var(--color-3) 75%,
-    var(--color-4) 75%,
-    var(--color-4) 100%
-  );
+  background: linear-gradient(90deg, var(--color-1) 0%, var(--color-1) 25%, var(--color-2) 25%, var(--color-2) 50%, var(--color-3) 50%, var(--color-3) 75%, var(--color-4) 75%, var(--color-4) 100%);
 }
         body {
             font-family: Arial, sans-serif;
@@ -58,34 +49,17 @@ body {
             color: #fff;
             font-size: 1em;
             cursor: pointer;
+            transition: background-color 0.3s ease;
         }
         #refreshButton:hover {
             background-color: #c9302c;
         }
-        body,
-      html {
-        height: 100%;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .refresh-button {
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        background-color: #f44336;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-      }
-      .refresh-button:hover {
-        background-color: #da190b;
-      }
     </style>
+</head>
+<body>
+    <h1>今天吃点啥</h1>
+    <p id="result"></p >
+    <button id="refreshButton">我不</button>
     <script>
         function getRandomItem(array) {
             var randomIndex = Math.floor(Math.random() * array.length);
@@ -93,74 +67,30 @@ body {
         }
 
         var foodList = [
-            "塔斯汀",
+            "汉堡",
             "披萨",
-            "关东煮",
+            "寿司",
             "炸鸡",
             "火锅",
-            "烤肉饭",
-            "v我50告诉你",
+            "沙拉",
+            "面条",
             "炒饭",
-            "鱼粉",
-            "卤肉饭",
-            "馄饨",
-            "黄焖鸡",
-            "猪脚饭",
-            "螺蛳粉",
-            "饺子",
-            "饭团",
-            "烤鸡饭",
-            "烤鸭饭",
-            "热卤",
-            "麻辣烫",
-            "意面",
-            "鸡公煲",
-            "跟韩国人去吃泡菜",
-            "小碗菜",
-            "别炒，我在烧烤",
-            "我也不r道啊",
-            "鸡蛋灌饼",
-            "铁板烧",
-            "满汉全席（想得美）",
-            "米线",
-            "酸辣粉",
-            "热干面",
-            "梅菜扣肉饼",
-            "KFC",
-            "呱",
-            "吃云南菌子",
-            "冒菜",
-            "叉烧饭",
-            "煲仔饭",
-            "泡面",
-            "抢室友的饭",
-            "外面啥都有",
-            "串串",
-            "肠粉",
-            "蒸菜",
-            "卷饼豆花",
-            "go餐馆",
-            "肉夹馍",
-            "花甲粉",
-            "麻辣香锅",
-            "盖码饭",
-            "过会吧，饿了就老实了",
-            "换个学校"
+            "蛋糕",
+            "冰淇淋"
         ];
 
         function selectRandomFood() {
             var randomFood = getRandomItem(foodList);
-            document.getElementById("result").innerText = randomFood;
+            document.getElementById("result").innerText = "" + randomFood;
         }
 
         window.onload = function() {
             selectRandomFood();
-        }
+        };
+
+        document.getElementById("refreshButton").addEventListener("click", function() {
+            selectRandomFood();
+        });
     </script>
-</head>
-<body>
-    <h1>今天吃点啥</h1>
-    <p id="result"></p >
-    <button id="refreshButton" onclick="selectRandomFood()">我不</button>
 </body>
 </html>
